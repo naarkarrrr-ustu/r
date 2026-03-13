@@ -1,20 +1,73 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, ExternalLink, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, ExternalLink, Heart, Bot, MessageCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function Footer() {
   const mainLogo = PlaceHolderImages.find(img => img.id === 'main-logo');
   const secondaryLogo = PlaceHolderImages.find(img => img.id === 'secondary-logo');
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 py-12 border-t border-slate-800 relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-30 -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-20 -ml-48 -mb-48" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <>
+      {/* Assistant Section - Before Footer */}
+      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-12 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl opacity-30 -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl opacity-30 -ml-48 -mb-48" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Bot Image */}
+            <div className="flex-shrink-0 w-40 h-40 relative animate-bounce-gentle hidden md:flex">
+              <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl" />
+              <Image
+                src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg"
+                alt="Assistant Bot"
+                width={160}
+                height={160}
+                className="relative object-contain drop-shadow-lg"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center md:text-left space-y-4 animate-fade-in-up">
+              <div className="flex items-center justify-center md:justify-start gap-3">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Bot className="w-6 h-6" />
+                </div>
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold">Need Help?</h2>
+                  <p className="text-white/80 text-sm">Chat with Sarathi Assistant 24/7</p>
+                </div>
+              </div>
+              <p className="text-white/90 text-sm md:text-base">
+                Get instant answers to all your driving licence questions. Our AI-powered assistant is available anytime to guide you through application processes, document requirements, test schedules, and more.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-slate-100 font-bold transition-all duration-300 hover:shadow-lg">
+                  <Link href="/assistant" className="inline-flex items-center gap-2">
+                    <MessageCircle className="w-5 h-5" />
+                    Start Chatting
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold transition-all duration-300" asChild>
+                  <Link href="/home">Back to Home</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 py-12 border-t border-slate-800 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-30 -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-20 -ml-48 -mb-48" />
+        
+        <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Branding */}
           <div className="space-y-4 animate-fade-in-up">
@@ -121,6 +174,36 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Assistant Quick Access */}
+        <div className="py-8 border-t border-slate-800 border-b mt-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="space-y-3 animate-fade-in-up">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Bot className="w-5 h-5 text-indigo-400" />
+                Need Instant Help?
+              </h3>
+              <p className="text-slate-400 text-sm">
+                Chat with our AI-powered Sarathi Assistant for quick answers about licensing, documents, slots, and more.
+              </p>
+              <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/50">
+                <Link href="/assistant" className="inline-flex items-center gap-2">
+                  <MessageCircle className="w-4 h-4" />
+                  Open Assistant
+                </Link>
+              </Button>
+            </div>
+            <div className="hidden md:flex justify-end">
+              <Image
+                src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg"
+                alt="Assistant"
+                width={120}
+                height={120}
+                className="object-contain drop-shadow-lg opacity-80 animate-bounce-gentle"
+              />
+            </div>
           </div>
         </div>
         
