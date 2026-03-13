@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-government",
+      "description": "Indian government building or national emblem abstract",
+      "imageUrl": "https://picsum.photos/seed/sarathi-hero/1200/600",
+      "imageHint": "government building"
+    },
+    {
+      "id": "driving-test",
+      "description": "Person taking a driving test in a car",
+      "imageUrl": "https://picsum.photos/seed/driving-test/600/400",
+      "imageHint": "driving test"
+    },
+    {
+      "id": "road-sign-stop",
+      "description": "Stop road sign",
+      "imageUrl": "https://picsum.photos/seed/road-stop/400/400",
+      "imageHint": "road sign"
+    },
+    {
+      "id": "road-sign-turn",
+      "description": "Right turn road sign",
+      "imageUrl": "https://picsum.photos/seed/road-turn/400/400",
+      "imageHint": "road sign"
+    },
+    {
+      "id": "qr-code",
+      "description": "Digital QR code for license",
+      "imageUrl": "https://picsum.photos/seed/license-qr/300/300",
+      "imageHint": "qr code"
+    }
+  ]
+}
