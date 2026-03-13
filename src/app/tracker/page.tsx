@@ -1,17 +1,13 @@
-
 "use client";
 
 import React from 'react';
 import { 
-  CheckCircle2, 
-  Circle, 
-  Search, 
   FileText, 
-  Calendar, 
+  Search, 
   CreditCard, 
-  CreditCard as CardIcon,
+  Calendar, 
   CheckCircle,
-  Truck
+  CreditCard as CardIcon
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -94,7 +90,7 @@ export default function TrackerPage() {
           <div className="relative space-y-0">
             <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-slate-100" />
             
-            {stages.map((stage, idx) => (
+            {stages.map((stage) => (
               <div key={stage.id} className="relative flex gap-8 pb-12 last:pb-0">
                 <div className={`z-10 w-10 h-10 rounded-full flex items-center justify-center border-4 border-white shadow-sm transition-all
                   ${stage.status === 'completed' ? 'bg-green-500 text-white' : 

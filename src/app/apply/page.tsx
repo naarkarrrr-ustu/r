@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, Suspense } from 'react';
@@ -11,7 +10,6 @@ import {
   CheckCircle2, 
   ChevronRight, 
   ChevronLeft,
-  Info,
   MapPin,
   Car,
   Search,
@@ -80,7 +78,6 @@ function ApplyContent() {
   };
 
   const renderStepContent = () => {
-    // LL FLOW CONTENT
     if (isLL) {
       switch (currentStep) {
         case 1:
@@ -132,7 +129,7 @@ function ApplyContent() {
                   <div className="flex justify-between font-bold pt-2 border-t mt-2"><span>Total</span><span className="text-primary">₹ 200.00</span></div>
                 </div>
               </CardContent></Card>
-              <Button className="w-full h-12">Pay Now via SBI ePay</Button>
+              <Button className="w-full h-12" onClick={handleNext}>Pay Now via SBI ePay</Button>
             </div>
           );
         case 5:
@@ -162,7 +159,6 @@ function ApplyContent() {
       }
     }
 
-    // DL FLOW CONTENT
     switch (currentStep) {
       case 1:
         return (
@@ -171,7 +167,7 @@ function ApplyContent() {
             <div className="space-y-4">
               <div className="space-y-2"><Label>Learner Licence Number</Label><Input placeholder="KA01 20230001234" /></div>
               <div className="space-y-2"><Label>Date of Issue</Label><Input type="date" /></div>
-              <Button className="w-full">Validate LL Details</Button>
+              <Button className="w-full" onClick={handleNext}>Validate LL Details</Button>
             </div>
           </div>
         );
@@ -179,7 +175,7 @@ function ApplyContent() {
         return (
           <div className="space-y-4">
             <div className="p-4 bg-green-50 text-green-800 rounded-lg text-sm flex items-center gap-2"><CheckCircle2 className="w-4 h-4" />LL Validated. Profile details pre-filled.</div>
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-2 gap-4 text-sm pt-4">
               <div><Label className="text-xs text-muted-foreground">Name</Label><p className="font-bold">Rajesh Kumar</p></div>
               <div><Label className="text-xs text-muted-foreground">DOB</Label><p className="font-bold">12/05/1995</p></div>
               <div className="col-span-2"><Label className="text-xs text-muted-foreground">Address</Label><p className="font-bold">#45, Jayanagar, Bangalore</p></div>
@@ -222,6 +218,7 @@ function ApplyContent() {
                 <div className="flex justify-between font-bold pt-2 border-t mt-2"><span>Total</span><span className="text-primary">₹ 700.00</span></div>
               </div>
             </CardContent></Card>
+            <Button className="w-full h-12" onClick={handleNext}>Pay Fees Online</Button>
           </div>
         );
       case 6:

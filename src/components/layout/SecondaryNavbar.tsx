@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -13,15 +12,9 @@ import {
 } from "@/components/ui/menubar";
 import { useSelectedState } from '@/context/state-context';
 
-/**
- * SecondaryNavbar component that provides a grouped service menu below the main navbar.
- * It strictly follows the requested Sarathi portal service hierarchy.
- * Responsive: Horizontally scrollable on mobile/tablet.
- */
 export function SecondaryNavbar() {
   const { selectedState } = useSelectedState();
 
-  // Only show the secondary navbar if a state has been selected
   if (!selectedState) return null;
 
   return (
@@ -123,8 +116,8 @@ export function SecondaryNavbar() {
               Upload Document
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem asChild><Link href="/apply?step=2">Upload Documents / Scanned Images</Link></MenubarItem>
-              <MenubarItem asChild><Link href="/apply?step=2">Upload Photograph And Signature</Link></MenubarItem>
+              <MenubarItem asChild><Link href="/apply?step=3">Upload Documents / Scanned Images</Link></MenubarItem>
+              <MenubarItem asChild><Link href="/apply?step=3">Upload Photograph And Signature</Link></MenubarItem>
               <MenubarItem asChild><Link href="/wallet">View Documents</Link></MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -135,7 +128,7 @@ export function SecondaryNavbar() {
               Fee Payments
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem asChild><Link href="/apply?step=3">Fee Payments</Link></MenubarItem>
+              <MenubarItem asChild><Link href="/apply?step=4">Fee Payments</Link></MenubarItem>
               <MenubarItem asChild><Link href="/tracker">Verify Payment Status</Link></MenubarItem>
             </MenubarContent>
           </MenubarMenu>
