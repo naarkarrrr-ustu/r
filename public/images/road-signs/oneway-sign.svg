@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300">
+  <defs>
+    <style>
+      .oneway-bg { fill: #0052CC; }
+      .oneway-text { font-size: 28px; font-weight: bold; fill: white; font-family: Arial, sans-serif; text-anchor: middle; }
+      .oneway-arrow { fill: none; stroke: white; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <rect class="oneway-bg" x="10" y="20" width="180" height="260" rx="8"/>
+  <text class="oneway-text" x="100" y="60">ONE WAY</text>
+  <path class="oneway-arrow" d="M 100 140 L 100 80 M 70 110 L 100 80 L 130 110"/>
+</svg>

@@ -32,7 +32,86 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: hsl(var(--background));
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    background:
+      radial-gradient(1200px circle at 8% -5%, hsla(210, 65%, 45%, 0.16), transparent 42%),
+      radial-gradient(900px circle at 92% 0%, hsla(140, 45%, 40%, 0.12), transparent 40%),
+      linear-gradient(165deg, hsla(212, 40%, 96%, 0.88) 0%, hsla(214, 55%, 99%, 0.95) 45%, hsla(210, 38%, 96%, 0.92) 100%),
+      repeating-linear-gradient(115deg, hsla(210, 22%, 67%, 0.08) 0 1px, transparent 1px 34px);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+    background:
+      linear-gradient(to top, hsla(210, 30%, 26%, 0.16), transparent 72%),
+      repeating-linear-gradient(90deg, transparent 0 64px, hsla(0, 0%, 100%, 0.72) 64px 82px, transparent 82px 146px);
+    -webkit-mask-image: linear-gradient(to top, black 5%, transparent 85%);
+    mask-image: linear-gradient(to top, black 5%, transparent 85%);
+  }
+  
+  /* Focus visible styles for better accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    animation: focusPulse 0.3s ease-out;
+  }
+  
+  @keyframes focusPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(40, 116, 186, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(40, 116, 186, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(40, 116, 186, 0);
+    }
+  }
+  
+  /* Smooth transitions for all elements */
+  button, a, input, select, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Selection color */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
   }
 }

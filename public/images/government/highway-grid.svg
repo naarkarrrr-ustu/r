@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">National Highway Digital Grid</title>
+  <desc id="desc">Digital transport monitoring map inspired background with highways and control nodes</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <rect x="0" y="0" width="1200" height="9" fill="#f97316" />
+  <rect x="0" y="9" width="1200" height="9" fill="#ffffff" />
+  <rect x="0" y="18" width="1200" height="9" fill="#16a34a" />
+
+  <g opacity="0.18" stroke="#bfdbfe" stroke-width="1">
+    <path d="M50 180 H1150" />
+    <path d="M50 260 H1150" />
+    <path d="M50 340 H1150" />
+    <path d="M50 420 H1150" />
+    <path d="M50 500 H1150" />
+    <path d="M180 90 V630" />
+    <path d="M340 90 V630" />
+    <path d="M500 90 V630" />
+    <path d="M660 90 V630" />
+    <path d="M820 90 V630" />
+    <path d="M980 90 V630" />
+  </g>
+
+  <g fill="none" stroke="url(#line)" stroke-linecap="round">
+    <path d="M120 540 C260 470, 390 350, 520 290 C630 240, 760 220, 1030 160" stroke-width="10" />
+    <path d="M150 170 C290 260, 420 350, 560 420 C730 500, 850 520, 1060 560" stroke-width="8" />
+    <path d="M170 610 C300 530, 400 470, 540 420 C690 360, 820 300, 1030 250" stroke-width="6" />
+  </g>
+
+  <g fill="#f8fafc" stroke="#67e8f9" stroke-width="4">
+    <circle cx="210" cy="500" r="16" />
+    <circle cx="360" cy="390" r="14" />
+    <circle cx="520" cy="290" r="16" />
+    <circle cx="760" cy="222" r="16" />
+    <circle cx="1028" cy="160" r="18" />
+    <circle cx="560" cy="420" r="16" />
+    <circle cx="850" cy="520" r="14" />
+  </g>
+
+  <g fill="#e0f2fe">
+    <rect x="70" y="116" width="260" height="86" rx="14" opacity="0.88" />
+    <text x="200" y="152" text-anchor="middle" fill="#0f172a" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="700">National Highway Grid</text>
+    <text x="200" y="178" text-anchor="middle" fill="#1e3a8a" font-size="14" font-family="Inter, Arial, sans-serif" font-weight="600">Live transport corridor intelligence</text>
+  </g>
+
+  <g fill="#ecfeff">
+    <rect x="860" y="90" width="280" height="98" rx="14" opacity="0.92" />
+    <text x="1000" y="132" text-anchor="middle" fill="#0f172a" font-size="20" font-family="Inter, Arial, sans-serif" font-weight="700">Integrated Control Desk</text>
+    <text x="1000" y="158" text-anchor="middle" fill="#0f766e" font-size="14" font-family="Inter, Arial, sans-serif" font-weight="600">RTO + Traffic + Highway data</text>
+  </g>
+</svg>

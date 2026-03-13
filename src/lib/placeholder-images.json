@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "main-logo",
+      "description": "Satyameva Jayate - Main Government Portal Logo",
+      "imageUrl": "/assets/main logo.png",
+      "imageHint": "satyameva jayate logo"
+    },
+    {
+      "id": "secondary-logo",
+      "description": "Secondary Logo",
+      "imageUrl": "/assets/logo.png",
+      "imageHint": "secondary logo"
+    },
+    {
+      "id": "hero-government",
+      "description": "Official ministry transport hero background with national highway context",
+      "imageUrl": "/images/government/transport-ministry-hero-improved.svg",
+      "imageHint": "transport ministry building"
+    },
+    {
+      "id": "gov-emblem",
+      "description": "Government of India official emblem",
+      "imageUrl": "/images/government/emblem-of-india.svg",
+      "imageHint": "government emblem"
+    },
+    {
+      "id": "gov-flag",
+      "description": "Flag of India",
+      "imageUrl": "/images/government/flag-of-india.svg",
+      "imageHint": "india flag"
+    },
+    {
+      "id": "gov-rto-command",
+      "description": "Regional transport office command center visual",
+      "imageUrl": "/images/government/rto-office-improved.svg",
+      "imageHint": "rto office"
+    },
+    {
+      "id": "gov-highway-grid",
+      "description": "National highway and transport intelligence network visual",
+      "imageUrl": "/images/government/digital-network-improved.svg",
+      "imageHint": "highway transport network"
+    },
+    {
+      "id": "driving-test",
+      "description": "Citizen taking a practical driving test in an official RTO setting",
+      "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&h=600&fit=crop",
+      "imageHint": "driving test car"
+    },
+    {
+      "id": "road-sign-stop",
+      "description": "Traffic STOP sign - Red octagon with white text",
+      "imageUrl": "/images/road-signs/stop-sign.svg",
+      "imageHint": "stop sign red octagon"
+    },
+    {
+      "id": "road-sign-yield",
+      "description": "Yield sign - Red triangle",
+      "imageUrl": "/images/road-signs/yield-sign.svg",
+      "imageHint": "yield sign red triangle"
+    },
+    {
+      "id": "road-sign-no-entry",
+      "description": "No Entry sign - Red circle with white bar",
+      "imageUrl": "/images/road-signs/no-entry-sign.svg",
+      "imageHint": "no entry sign"
+    },
+    {
+      "id": "road-sign-oneway",
+      "description": "One Way sign - Blue background with arrow",
+      "imageUrl": "/images/road-signs/oneway-sign.svg",
+      "imageHint": "one way sign"
+    },
+    {
+      "id": "road-sign-turn",
+      "description": "Turn sign - Left turn indication",
+      "imageUrl": "/images/road-signs/turn-sign.svg",
+      "imageHint": "left turn sign"
+    },
+    {
+      "id": "qr-code",
+      "description": "Digital licence verification QR code visual",
+      "imageUrl": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=300&h=300&fit=crop",
+      "imageHint": "qr code"
+    }
+  ]
 }
