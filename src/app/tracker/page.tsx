@@ -9,7 +9,9 @@ import {
   FileText, 
   Calendar, 
   CreditCard, 
-  CreditCard as CardIcon 
+  CreditCard as CardIcon,
+  CheckCircle,
+  Truck
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,39 +26,47 @@ export default function TrackerPage() {
       date: 'Oct 12, 2023', 
       status: 'completed', 
       icon: FileText,
-      description: 'Your initial application and fee payment have been received.'
+      description: 'Your application has been received and ID generated.'
     },
     { 
       id: 2, 
       title: 'Document Verification', 
       date: 'Oct 15, 2023', 
       status: 'completed', 
-      icon: CheckCircle2,
-      description: 'Submitted documents (Aadhar, Medical Cert) verified by the RTO officer.'
+      icon: Search,
+      description: 'Submitted documents verified by the RTO officer.'
     },
     { 
       id: 3, 
+      title: 'Fee Paid', 
+      date: 'Oct 16, 2023', 
+      status: 'completed', 
+      icon: CreditCard,
+      description: 'Application fees successfully processed.'
+    },
+    { 
+      id: 4, 
       title: 'Test Scheduled', 
       date: 'Nov 25, 2023', 
       status: 'current', 
       icon: Calendar,
-      description: 'Waiting for practical test completion at the RTO ground.'
-    },
-    { 
-      id: 4, 
-      title: 'Scrutiny & Approval', 
-      date: 'Pending', 
-      status: 'upcoming', 
-      icon: Search,
-      description: 'Final review of test performance and profile by the licensing authority.'
+      description: 'Waiting for your appearance at the test ground.'
     },
     { 
       id: 5, 
-      title: 'Licence Issued', 
+      title: 'Test Passed', 
+      date: 'Pending', 
+      status: 'upcoming', 
+      icon: CheckCircle,
+      description: 'Approval based on your driving test performance.'
+    },
+    { 
+      id: 6, 
+      title: 'Licence Generated', 
       date: 'Pending', 
       status: 'upcoming', 
       icon: CardIcon,
-      description: 'Smart card printing and dispatch via registered speed post.'
+      description: 'Smart card printing and dispatch via post.'
     },
   ];
 
@@ -82,12 +92,10 @@ export default function TrackerPage() {
         </CardHeader>
         <CardContent className="p-8">
           <div className="relative space-y-0">
-            {/* Timeline Line */}
             <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-slate-100" />
             
             {stages.map((stage, idx) => (
               <div key={stage.id} className="relative flex gap-8 pb-12 last:pb-0">
-                {/* Timeline Marker */}
                 <div className={`z-10 w-10 h-10 rounded-full flex items-center justify-center border-4 border-white shadow-sm transition-all
                   ${stage.status === 'completed' ? 'bg-green-500 text-white' : 
                     stage.status === 'current' ? 'bg-primary text-white scale-110 ring-4 ring-primary/20' : 'bg-slate-100 text-slate-400'}
@@ -97,14 +105,10 @@ export default function TrackerPage() {
                 
                 <div className={`flex-1 pt-1 ${stage.status === 'upcoming' ? 'opacity-60' : ''}`}>
                   <div className="flex justify-between items-start mb-1">
-                    <h3 className={`font-bold text-lg ${stage.status === 'current' ? 'text-primary' : 'text-slate-800'}`}>
-                      {stage.title}
-                    </h3>
+                    <h3 className={`font-bold text-lg ${stage.status === 'current' ? 'text-primary' : 'text-slate-800'}`}>{stage.title}</h3>
                     <span className="text-xs font-medium px-2 py-1 rounded bg-slate-50 text-slate-500">{stage.date}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {stage.description}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{stage.description}</p>
                   
                   {stage.status === 'current' && (
                     <div className="mt-4 p-4 rounded-lg bg-primary/5 border border-primary/10 space-y-3">
@@ -115,9 +119,6 @@ export default function TrackerPage() {
                       <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
                         <div className="h-full bg-primary animate-pulse" style={{ width: '40%' }} />
                       </div>
-                      <Button variant="link" size="sm" className="h-auto p-0 text-xs font-bold text-primary">
-                        Reschedule Appointment?
-                      </Button>
                     </div>
                   )}
                 </div>
@@ -131,7 +132,7 @@ export default function TrackerPage() {
         <p className="text-sm text-muted-foreground mb-4">Facing issues with your application?</p>
         <div className="flex justify-center gap-4">
           <Button variant="outline" className="text-xs">File a Grievance</Button>
-          <Button variant="outline" className="text-xs">Contact RTO (KA-01)</Button>
+          <Button variant="outline" className="text-xs">Contact RTO Support</Button>
         </div>
       </div>
     </div>
