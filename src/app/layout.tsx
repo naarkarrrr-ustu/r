@@ -4,6 +4,7 @@ import './globals.css';
 import {Navbar} from '@/components/layout/Navbar';
 import {Footer} from '@/components/layout/Footer';
 import {Toaster} from '@/components/ui/toaster';
+import {StateProvider} from '@/context/state-context';
 
 export const metadata: Metadata = {
   title: 'Sarathi Connect | Enhanced Driving Licence Portal',
@@ -23,12 +24,14 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen bg-background">
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
+        <StateProvider>
+          <Navbar />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <Toaster />
+        </StateProvider>
       </body>
     </html>
   );
