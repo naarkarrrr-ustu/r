@@ -71,7 +71,7 @@ export function FloatingChatbot() {
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-2xl z-50 animate-bounce-gentle p-0"
+        className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-2xl z-50 p-0"
       >
         <Bot className="w-7 h-7" />
       </Button>
