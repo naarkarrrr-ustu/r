@@ -11,54 +11,7 @@ export function Footer() {
 
   return (
     <>
-      {/* Assistant Section - Before Footer */}
-      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-12 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl opacity-30 -mr-48 -mt-48" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl opacity-30 -ml-48 -mb-48" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Bot Image */}
-            <div className="flex-shrink-0 w-40 h-40 relative animate-bounce-gentle hidden md:flex">
-              <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl" />
-              <Image
-                src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg"
-                alt="Assistant Bot"
-                width={160}
-                height={160}
-                className="relative object-contain drop-shadow-lg"
-              />
-            </div>
 
-            {/* Content */}
-            <div className="flex-1 text-center md:text-left space-y-4 animate-fade-in-up">
-              <div className="flex items-center justify-center md:justify-start gap-3">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <Bot className="w-6 h-6" />
-                </div>
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold">Need Help?</h2>
-                  <p className="text-white/80 text-sm">Chat with Sarathi Assistant 24/7</p>
-                </div>
-              </div>
-              <p className="text-white/90 text-sm md:text-base">
-                Get instant answers to all your driving licence questions. Our AI-powered assistant is available anytime to guide you through application processes, document requirements, test schedules, and more.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-slate-100 font-bold transition-all duration-300 hover:shadow-lg">
-                  <Link href="/assistant" className="inline-flex items-center gap-2">
-                    <MessageCircle className="w-5 h-5" />
-                    Start Chatting
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold transition-all duration-300" asChild>
-                  <Link href="/home">Back to Home</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer */}
       <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 py-12 border-t border-slate-800 relative overflow-hidden">
