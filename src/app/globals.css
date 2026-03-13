@@ -32,6 +32,12 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+  
   body {
     @apply text-foreground;
     background-color: hsl(var(--background));
@@ -39,6 +45,16 @@
     position: relative;
     isolation: isolate;
     overflow-x: hidden;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   body::before {
@@ -69,5 +85,33 @@
       repeating-linear-gradient(90deg, transparent 0 64px, hsla(0, 0%, 100%, 0.72) 64px 82px, transparent 82px 146px);
     -webkit-mask-image: linear-gradient(to top, black 5%, transparent 85%);
     mask-image: linear-gradient(to top, black 5%, transparent 85%);
+  }
+  
+  /* Focus visible styles for better accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    animation: focusPulse 0.3s ease-out;
+  }
+  
+  @keyframes focusPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(40, 116, 186, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(40, 116, 186, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(40, 116, 186, 0);
+    }
+  }
+  
+  /* Smooth transitions for all elements */
+  button, a, input, select, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Selection color */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
   }
 }
