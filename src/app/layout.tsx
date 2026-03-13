@@ -2,6 +2,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import {Navbar} from '@/components/layout/Navbar';
+import {SecondaryNavbar} from '@/components/layout/SecondaryNavbar';
 import {Footer} from '@/components/layout/Footer';
 import {Toaster} from '@/components/ui/toaster';
 import {StateProvider} from '@/context/state-context';
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="font-body antialiased flex flex-col min-h-screen bg-background">
         <StateProvider>
           <Navbar />
+          <SecondaryNavbar />
           <main className="flex-1">
             {children}
           </main>
