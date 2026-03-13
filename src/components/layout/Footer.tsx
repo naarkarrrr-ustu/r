@@ -175,36 +175,6 @@ export function Footer() {
               </ul>
             </div>
           </div>
-
-          {/* Assistant Quick Access */}
-          <div className="py-8 border-t border-slate-800 border-b mt-8 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Bot className="w-5 h-5 text-indigo-400" />
-                  Need Instant Help?
-                </h3>
-                <p className="text-slate-400 text-sm">
-                  Chat with our AI-powered Sarathi Assistant for quick answers about licensing, documents, slots, and more.
-                </p>
-                <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-all duration-300 hover:shadow-lg">
-                  <Link href="/assistant" className="inline-flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4" />
-                    Open Assistant
-                  </Link>
-                </Button>
-              </div>
-              <div className="hidden md:flex justify-end">
-                <Image
-                  src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg"
-                  alt="Assistant"
-                  width={120}
-                  height={120}
-                  className="object-contain drop-shadow-lg opacity-80 animate-bounce-gentle"
-                />
-              </div>
-            </div>
-          </div>
           
           {/* Copyright */}
           <div className="pt-8 text-center text-xs text-slate-500 space-y-2 animate-fade-in-up">
