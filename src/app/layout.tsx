@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import {Navbar} from '@/components/layout/Navbar';
@@ -6,6 +5,7 @@ import {SecondaryNavbar} from '@/components/layout/SecondaryNavbar';
 import {Footer} from '@/components/layout/Footer';
 import {Toaster} from '@/components/ui/toaster';
 import {StateProvider} from '@/context/state-context';
+import {FloatingChatbot} from '@/components/FloatingChatbot';
 
 export const metadata: Metadata = {
   title: 'Sarathi Connect | Enhanced Driving Licence Portal',
@@ -32,6 +32,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingChatbot />
           <Toaster />
         </StateProvider>
       </body>
