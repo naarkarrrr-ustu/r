@@ -23,6 +23,12 @@ const questions = [
     id: 1,
     question: "Which road sign indicates that the driver must stop the vehicle?",
     image: "road-sign-stop",
+    visualOptions: [
+      { label: "Yield Sign", icon: "road-sign-yield" },
+      { label: "No Entry Sign", icon: "road-sign-no-entry" },
+      { label: "Stop Sign", icon: "road-sign-stop" },
+      { label: "One Way Sign", icon: "road-sign-oneway" }
+    ],
     options: ["Yield Sign", "No Entry Sign", "Stop Sign", "One Way Sign"],
     correct: 2
   },
@@ -30,8 +36,14 @@ const questions = [
     id: 2,
     question: "This sign indicates that the road ahead has a:",
     image: "road-sign-turn",
+    visualOptions: [
+      { label: "Left Turn", icon: "road-sign-turn" },
+      { label: "Right Turn", icon: "road-sign-turn" },
+      { label: "Steep Descent", icon: null },
+      { label: "Narrow Bridge", icon: null }
+    ],
     options: ["Left Turn", "Right Turn", "Steep Descent", "Narrow Bridge"],
-    correct: 1
+    correct: 0
   },
   {
     id: 3,
@@ -163,45 +175,92 @@ export default function MockTestPage() {
             {questions[currentQuestion].question}
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <CardContent className="p-8 space-y-6">
           {qImg && (
-            <div className="relative aspect-square w-full max-w-[300px] mx-auto bg-white rounded-2xl shadow-inner border p-4 flex items-center justify-center">
-               <Image 
-                src={qImg.imageUrl} 
-                alt="Question visual" 
-                width={200} 
-                height={200} 
-                className="object-contain"
-                data-ai-hint={qImg.imageHint}
-               />
+            <div className="flex justify-center">
+              <div className="relative aspect-square w-full max-w-[250px] bg-white rounded-2xl shadow-inner border p-4 flex items-center justify-center">
+                <Image 
+                  src={qImg.imageUrl} 
+                  alt="Question visual" 
+                  width={200} 
+                  height={200} 
+                  className="object-contain"
+                  data-ai-hint={qImg.imageHint}
+                />
+              </div>
             </div>
           )}
-          
-          <div className={`space-y-4 ${!qImg ? 'md:col-span-2 max-w-2xl mx-auto w-full' : ''}`}>
-            {questions[currentQuestion].options.map((option, idx) => {
-              const isCorrect = idx === questions[currentQuestion].correct;
-              const isSelected = selectedOption === idx;
-              
-              let variantClasses = "border-slate-200 hover:border-primary hover:bg-primary/5";
-              if (isSelected && !showResult) variantClasses = "border-primary bg-primary/5 ring-2 ring-primary/20";
-              if (showResult && isCorrect) variantClasses = "border-green-500 bg-green-50 ring-2 ring-green-200";
-              if (showResult && isSelected && !isCorrect) variantClasses = "border-red-500 bg-red-50 ring-2 ring-red-200";
 
-              return (
-                <div 
-                  key={idx} 
-                  onClick={() => handleOptionSelect(idx)}
-                  className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex items-center justify-between group ${variantClasses}`}
-                >
-                  <span className={`font-medium ${isSelected && !showResult ? 'text-primary' : 'text-slate-700'}`}>
-                    {option}
-                  </span>
-                  {showResult && isCorrect && <CheckCircle2 className="w-5 h-5 text-green-500" />}
-                  {showResult && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-red-500" />}
-                </div>
-              );
-            })}
-          </div>
+          {/* Visual Options Grid */}
+          {questions[currentQuestion].visualOptions && (
+            <div className="grid grid-cols-2 gap-4">
+              {questions[currentQuestion].visualOptions.map((visualOption, idx) => {
+                const isCorrect = idx === questions[currentQuestion].correct;
+                const isSelected = selectedOption === idx;
+                const iconImg = visualOption.icon ? PlaceHolderImages.find(img => img.id === visualOption.icon) : null;
+
+                let variantClasses = "border-slate-200 hover:border-primary hover:bg-primary/5";
+                if (isSelected && !showResult) variantClasses = "border-primary bg-primary/5 ring-2 ring-primary/20";
+                if (showResult && isCorrect) variantClasses = "border-green-500 bg-green-50 ring-2 ring-green-200";
+                if (showResult && isSelected && !isCorrect) variantClasses = "border-red-500 bg-red-50 ring-2 ring-red-200";
+
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => handleOptionSelect(idx)}
+                    className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex flex-col items-center justify-center gap-3 group ${variantClasses}`}
+                  >
+                    {iconImg && (
+                      <div className="relative w-20 h-20 bg-white rounded-lg flex items-center justify-center border">
+                        <Image
+                          src={iconImg.imageUrl}
+                          alt={visualOption.label}
+                          width={60}
+                          height={60}
+                          className="object-contain"
+                          data-ai-hint={iconImg.imageHint}
+                        />
+                      </div>
+                    )}
+                    <span className={`font-medium text-center text-sm ${isSelected && !showResult ? 'text-primary' : 'text-slate-700'}`}>
+                      {visualOption.label}
+                    </span>
+                    {showResult && isCorrect && <CheckCircle2 className="w-5 h-5 text-green-500 mt-auto" />}
+                    {showResult && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-red-500 mt-auto" />}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Text-only Options */}
+          {!questions[currentQuestion].visualOptions && (
+            <div className={`space-y-4 max-w-2xl mx-auto w-full`}>
+              {questions[currentQuestion].options.map((option, idx) => {
+                const isCorrect = idx === questions[currentQuestion].correct;
+                const isSelected = selectedOption === idx;
+
+                let variantClasses = "border-slate-200 hover:border-primary hover:bg-primary/5";
+                if (isSelected && !showResult) variantClasses = "border-primary bg-primary/5 ring-2 ring-primary/20";
+                if (showResult && isCorrect) variantClasses = "border-green-500 bg-green-50 ring-2 ring-green-200";
+                if (showResult && isSelected && !isCorrect) variantClasses = "border-red-500 bg-red-50 ring-2 ring-red-200";
+
+                return (
+                  <div 
+                    key={idx} 
+                    onClick={() => handleOptionSelect(idx)}
+                    className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex items-center justify-between group ${variantClasses}`}
+                  >
+                    <span className={`font-medium ${isSelected && !showResult ? 'text-primary' : 'text-slate-700'}`}>
+                      {option}
+                    </span>
+                    {showResult && isCorrect && <CheckCircle2 className="w-5 h-5 text-green-500" />}
+                    {showResult && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-red-500" />}
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </CardContent>
         <CardFooter className="p-6 bg-slate-50 border-t flex justify-end gap-3">
           {!showResult ? (

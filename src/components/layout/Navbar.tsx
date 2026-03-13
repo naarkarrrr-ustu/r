@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, User, Globe, Bell, ChevronDown, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,17 +13,33 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useSelectedState } from '@/context/state-context';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { selectedState, clearState } = useSelectedState();
+  const mainLogo = PlaceHolderImages.find(img => img.id === 'main-logo');
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/home" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">S</div>
+          <Link href="/home" className="flex items-center gap-3">
+            <div className="relative h-10 w-10 flex items-center justify-center">
+              {mainLogo ? (
+                <Image
+                  src={mainLogo.imageUrl}
+                  alt={mainLogo.description}
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  priority
+                  data-ai-hint={mainLogo.imageHint}
+                />
+              ) : (
+                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">S</div>
+              )}
+            </div>
             <span className="text-xl font-bold font-headline tracking-tight text-primary">Sarathi Connect</span>
           </Link>
           

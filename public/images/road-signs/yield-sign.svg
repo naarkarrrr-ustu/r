@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .yield-triangle { fill: #DD0000; stroke: white; stroke-width: 8; }
+      .yield-text { font-size: 36px; font-weight: bold; fill: white; font-family: Arial, sans-serif; text-anchor: middle; }
+    </style>
+  </defs>
+  <polygon class="yield-triangle" points="100,20 180,170 20,170"/>
+  <text class="yield-text" x="100" y="125">YIELD</text>
+</svg>

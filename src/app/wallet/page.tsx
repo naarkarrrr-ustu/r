@@ -21,6 +21,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function WalletPage() {
   const qrImg = PlaceHolderImages.find(img => img.id === 'qr-code');
+  const mainLogo = PlaceHolderImages.find(img => img.id === 'main-logo');
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-5xl">
@@ -52,8 +53,19 @@ export default function WalletPage() {
           <div className="relative aspect-[1.6/1] w-full bg-gradient-to-br from-primary to-blue-800 rounded-3xl overflow-hidden shadow-2xl p-6 text-white border-4 border-white/20">
             {/* Design Elements */}
             <div className="absolute top-0 right-0 p-4">
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20">
-                <span className="text-xs font-bold">MoRTH</span>
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30">
+                {mainLogo ? (
+                  <Image
+                    src={mainLogo.imageUrl}
+                    alt={mainLogo.description}
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                    data-ai-hint={mainLogo.imageHint}
+                  />
+                ) : (
+                  <span className="text-xs font-bold">MoRTH</span>
+                )}
               </div>
             </div>
             <div className="absolute bottom-0 right-0 p-8 opacity-10">

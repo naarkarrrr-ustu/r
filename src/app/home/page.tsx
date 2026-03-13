@@ -36,46 +36,46 @@ export default function HomeHubPage() {
     }
   }, [selectedState, router]);
 
-  const heroImg = PlaceHolderImages.find(img => img.id === 'hero-government');
-
+  // Service categories
   const categories = [
     {
-      title: "Learner Licence Services",
+      title: "Learner Licence",
       icon: FileText,
+      color: "from-blue-500 to-blue-600",
       actions: [
         { title: "Apply for LL", desc: "Start new application", href: "/apply?type=ll", icon: FileText },
-        { title: "LL Test Tutorial", desc: "Watch safety videos", href: "/mock-test", icon: BookOpen },
-        { title: "Online LL Test", desc: "Take test from home", href: "/mock-test", icon: Zap }
+        { title: "LL Test", desc: "Watch tutorials", href: "/mock-test", icon: BookOpen },
+        { title: "Online Test", desc: "Take test online", href: "/mock-test", icon: Zap }
       ]
     },
     {
-      title: "Driving Licence Services",
+      title: "Driving Licence",
       icon: CreditCard,
+      color: "from-green-500 to-green-600",
       actions: [
-        { title: "Apply for DL", desc: "After 30 days of LL", href: "/apply?type=dl", icon: CreditCard },
-        { title: "DL Renewal", desc: "Renew expired licence", href: "/apply?type=dl-renewal", icon: RefreshCcw },
-        { title: "Change of Address", desc: "Update current address", href: "/apply?type=dl-address", icon: MapPin },
-        { title: "Duplicate DL", desc: "Lost or damaged card", href: "/apply?type=dl-duplicate", icon: PlusCircle }
+        { title: "Apply for DL", desc: "Main application", href: "/apply?type=dl", icon: CreditCard },
+        { title: "Renewal", desc: "Renew licence", href: "/apply?type=dl-renewal", icon: RefreshCcw },
+        { title: "Address Update", desc: "Change address", href: "/apply?type=dl-address", icon: MapPin }
       ]
     },
     {
-      title: "Appointments & Tracker",
+      title: "Appointments",
       icon: Calendar,
+      color: "from-orange-500 to-orange-600",
       actions: [
-        { title: "Book Slot", desc: "Driving test booking", href: "/slots", icon: Calendar },
-        { title: "Track Status", desc: "Check app progress", href: "/tracker", icon: Search },
-        { title: "Fee Payment", desc: "Pay pending fees", href: "/apply", icon: CreditCard },
-        { title: "Upload Docs", desc: "Centralized vault", href: "/apply", icon: ShieldCheck }
+        { title: "Book Slot", desc: "Driving test", href: "/slots", icon: Calendar },
+        { title: "Track Status", desc: "Check progress", href: "/tracker", icon: Search },
+        { title: "Fee Payment", desc: "Pay fees", href: "/apply", icon: CreditCard }
       ]
     },
     {
-      title: "Other Utilities",
+      title: "Utilities",
       icon: Globe,
+      color: "from-purple-500 to-purple-600",
       actions: [
         { title: "IDP", desc: "International Permit", href: "/apply?type=idp", icon: Globe },
-        { title: "Mobile Update", desc: "Update phone number", href: "/dashboard", icon: Phone },
-        { title: "DL Extract", desc: "Download DL details", href: "/wallet", icon: FileText },
-        { title: "Withdraw Service", desc: "Cancel application", href: "/tracker", icon: LogOut }
+        { title: "Phone Update", desc: "Update number", href: "/dashboard", icon: Phone },
+        { title: "DL Extract", desc: "Download details", href: "/wallet", icon: FileText }
       ]
     }
   ];
@@ -83,63 +83,49 @@ export default function HomeHubPage() {
   if (!selectedState) return null;
 
   return (
-    <div className="flex flex-col gap-12 pb-20">
-      {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          {heroImg && (
-            <Image 
-              src={heroImg.imageUrl}
-              alt={heroImg.description}
-              fill
-              className="object-cover brightness-[0.4]"
-              priority
-              data-ai-hint={heroImg.imageHint}
-            />
-          )}
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl text-white space-y-6">
-            <span className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-md rounded-full text-sm font-medium border border-white/20">
-              {selectedState} State RTO Portal
+    <div className="w-full flex flex-col gap-12 pb-20">
+      {/* Header Section */}
+      <section className="bg-gradient-to-r from-primary to-blue-700 text-white py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl space-y-4">
+            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium">
+              {selectedState} RTO Portal
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold font-headline leading-tight">
-              Driving Licence Services <br />
-              <span className="text-accent">Simplified for You</span>
+            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
+              Driving Licence Services
             </h1>
-            <p className="text-lg text-slate-200 leading-relaxed max-w-xl">
-              Access all your transportation-related documentation services online. Fast, secure, and contactless.
+            <p className="text-base md:text-lg text-white/90">
+              Fast, secure, contactless digital services for all your transportation needs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Grouped Services */}
-      <section className="container mx-auto px-4 -mt-16 relative z-20">
+      {/* Services Grid */}
+      <section className="container mx-auto px-4">
         <div className="space-y-12">
-          {categories.map((cat, idx) => (
+          {categories.map((category, idx) => (
             <div key={idx} className="space-y-4">
-              <div className="flex items-center gap-2 px-2">
-                <div className="p-1.5 bg-primary/10 text-primary rounded-md">
-                  <cat.icon className="w-5 h-5" />
+              <div className="flex items-center gap-3">
+                <div className={`p-2 rounded-lg bg-gradient-to-br ${category.color} text-white`}>
+                  <category.icon className="w-5 h-5" />
                 </div>
-                <h2 className="text-xl font-bold font-headline">{cat.title}</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-slate-900">{category.title}</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {cat.actions.map((action, actionIdx) => (
-                  <Link key={actionIdx} href={action.href}>
-                    <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all border-slate-100 group">
-                      <CardHeader className="p-5 pb-0">
-                        <div className="flex justify-between items-start mb-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {category.actions.map((action, actionIdx) => (
+                  <Link key={actionIdx} href={action.href} className="group">
+                    <Card className="h-full hover:shadow-lg hover:-translate-y-1 transition-all border-slate-100">
+                      <CardContent className="p-5">
+                        <div className="flex items-start justify-between mb-3">
                           <div className="p-2 rounded-lg bg-slate-50 text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
                             <action.icon className="w-5 h-5" />
                           </div>
                           <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-primary transition-colors" />
                         </div>
-                        <CardTitle className="text-base font-bold">{action.title}</CardTitle>
-                        <CardDescription className="text-xs">{action.desc}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-5 pt-4" />
+                        <CardTitle className="text-base font-bold text-slate-900">{action.title}</CardTitle>
+                        <CardDescription className="text-xs text-slate-500">{action.desc}</CardDescription>
+                      </CardContent>
                     </Card>
                   </Link>
                 ))}
@@ -149,21 +135,17 @@ export default function HomeHubPage() {
         </div>
       </section>
 
-      {/* Quick Search Card */}
-      <section className="container mx-auto px-4 mt-8">
-        <Card className="bg-primary text-primary-foreground border-none overflow-hidden relative">
-          <CardContent className="p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-            <div className="space-y-2 text-center md:text-left">
-              <h2 className="text-2xl font-bold font-headline">Need to check your slot?</h2>
-              <p className="text-primary-foreground/80">
-                Instantly view your booked driving test details or find a new RTO.
-              </p>
+      {/* CTA Card */}
+      <section className="container mx-auto px-4">
+        <Card className="bg-gradient-to-r from-primary to-blue-700 text-white border-none overflow-hidden">
+          <CardContent className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-3xl font-bold">Check Your Test Slot</h2>
+              <p className="text-white/90">View booked test details or find your nearest RTO</p>
             </div>
-            <div className="flex gap-4">
-              <Button variant="secondary" size="lg" className="h-12 font-bold px-8" asChild>
-                <Link href="/slots">Check Test Slots</Link>
-              </Button>
-            </div>
+            <Button size="lg" className="h-12 px-8 bg-white text-primary hover:bg-slate-100 font-bold" asChild>
+              <Link href="/slots">Check Slots</Link>
+            </Button>
           </CardContent>
         </Card>
       </section>

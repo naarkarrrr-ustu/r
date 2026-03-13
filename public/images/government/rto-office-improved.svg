@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bbdefb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1565c0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="5" stdDeviation="8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="800" fill="url(#bgGrad)"/>
+  
+  <!-- Tricolour Flag Bar -->
+  <rect x="0" y="0" width="1400" height="18" fill="#ff9a00"/>
+  <rect x="0" y="18" width="1400" height="18" fill="#ffffff"/>
+  <rect x="0" y="36" width="1400" height="18" fill="#138808"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="130" r="100" fill="#bbdefb" opacity="0.4"/>
+  <circle cx="1300" cy="180" r="80" fill="#bbdefb" opacity="0.3"/>
+
+  <!-- Main RTO Building -->
+  <g filter="url(#shadow)">
+    <!-- Base Foundation -->
+    <rect x="200" y="480" width="1000" height="20" fill="#9e9e9e"/>
+    
+    <!-- Building Body -->
+    <rect x="200" y="150" width="1000" height="330" fill="url(#buildGrad)" stroke="#bdbdbd" stroke-width="2" rx="8"/>
+    
+    <!-- Roof -->
+    <polygon points="200,150 700,80 1200,150" fill="#1565c0" stroke="#0d47a1" stroke-width="2"/>
+    
+    <!-- Central Entrance Portico -->
+    <rect x="550" y="120" width="300" height="50" fill="url(#accentGrad)" rx="6"/>
+    <text x="700" y="155" text-anchor="middle" fill="#ffffff" font-size="18" font-family="Arial, sans-serif" font-weight="bold">RTO SERVICE CENTER</text>
+    
+    <!-- Left Column Section -->
+    <rect x="220" y="190" width="160" height="280" fill="#ffffff" stroke="#2196f3" stroke-width="2" rx="4"/>
+    <rect x="240" y="210" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="300" y="242" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 1</text>
+    
+    <rect x="240" y="280" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="300" y="312" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 2</text>
+    
+    <rect x="240" y="350" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="300" y="382" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 3</text>
+    
+    <!-- Center Glass Facade Section -->
+    <rect x="390" y="190" width="350" height="280" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+    <text x="565" y="215" text-anchor="middle" fill="#0d47a1" font-size="16" font-family="Arial" font-weight="bold">DIGITAL SERVICE KIOSK</text>
+    
+    <!-- Service Info Panels -->
+    <rect x="410" y="240" width="310" height="50" fill="#ffffff" stroke="#90caf9" stroke-width="1" rx="3"/>
+    <text x="565" y="260" text-anchor="middle" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">📱 Online Booking & Renewal</text>
+    <text x="565" y="280" text-anchor="middle" fill="#424242" font-size="11" font-family="Arial">Available 24/7 on portal.sarathi.gov.in</text>
+    
+    <rect x="410" y="305" width="310" height="50" fill="#ffffff" stroke="#90caf9" stroke-width="1" rx="3"/>
+    <text x="565" y="325" text-anchor="middle" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">⚡ Quick Processing</text>
+    <text x="565" y="345" text-anchor="middle" fill="#424242" font-size="11" font-family="Arial">Approval within 3-5 working days</text>
+    
+    <!-- Right Column Section -->
+    <rect x="1020" y="190" width="160" height="280" fill="#ffffff" stroke="#2196f3" stroke-width="2" rx="4"/>
+    <rect x="1040" y="210" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="1100" y="242" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 4</text>
+    
+    <rect x="1040" y="280" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="1100" y="312" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 5</text>
+    
+    <rect x="1040" y="350" width="120" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="1100" y="382" text-anchor="middle" fill="#1565c0" font-size="12" font-family="Arial" font-weight="bold">WINDOW 6</text>
+    
+    <!-- Information Display Board -->
+    <rect x="250" y="420" width="900" height="45" fill="#0d47a1" stroke="#1565c0" stroke-width="2" rx="4"/>
+    <text x="700" y="445" text-anchor="middle" fill="#fbbf24" font-size="14" font-family="Arial, monospace" font-weight="bold">⏱️ Current Wait Time: 8 minutes | Serving: L-145 @ Counter 2</text>
+  </g>
+  
+  <!-- Bottom Info Boxes -->
+  <g filter="url(#shadow)">
+    <!-- Box 1: Online Services -->
+    <rect x="80" y="570" width="280" height="150" fill="#ffffff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <circle cx="180" cy="600" r="28" fill="#4caf50"/>
+    <text x="180" y="612" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">✓</text>
+    <text x="220" y="605" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">Online Services</text>
+    <text x="220" y="625" fill="#616161" font-size="11" font-family="Arial">LL/DL applications</text>
+    <text x="220" y="642" fill="#616161" font-size="11" font-family="Arial">Renewal & updates</text>
+    <text x="220" y="659" fill="#2196f3" font-size="10" font-family="Arial" font-weight="bold">Available 24/7</text>
+    
+    <!-- Box 2: Home Delivery -->
+    <rect x="415" y="570" width="280" height="150" fill="#ffffff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <circle cx="515" cy="600" r="28" fill="#2196f3"/>
+    <text x="515" y="615" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">🚚</text>
+    <text x="555" y="605" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">Home Delivery</text>
+    <text x="555" y="625" fill="#616161" font-size="11" font-family="Arial">Licence cards delivered</text>
+    <text x="555" y="642" fill="#616161" font-size="11" font-family="Arial">to your doorstep</text>
+    <text x="555" y="659" fill="#2196f3" font-size="10" font-family="Arial" font-weight="bold">Safe & Secure</text>
+    
+    <!-- Box 3: Support -->
+    <rect x="750" y="570" width="280" height="150" fill="#ffffff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <circle cx="850" cy="600" r="28" fill="#ff9a00"/>
+    <text x="850" y="614" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">📞</text>
+    <text x="890" y="605" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">24/7 Support</text>
+    <text x="890" y="625" fill="#616161" font-size="11" font-family="Arial">Helpline: 1800-127-7777</text>
+    <text x="890" y="642" fill="#616161" font-size="11" font-family="Arial">Email: support@sarathi.gov.in</text>
+    <text x="890" y="659" fill="#2196f3" font-size="10" font-family="Arial" font-weight="bold">Hindi & English</text>
+    
+    <!-- Box 4: Digital ID -->
+    <rect x="1085" y="570" width="280" height="150" fill="#ffffff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <circle cx="1185" cy="600" r="28" fill="#9c27b0"/>
+    <text x="1185" y="614" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">🆔</text>
+    <text x="1225" y="605" fill="#1565c0" font-size="13" font-family="Arial" font-weight="bold">Digital Licence</text>
+    <text x="1225" y="625" fill="#616161" font-size="11" font-family="Arial">Instant digital licence</text>
+    <text x="1225" y="642" fill="#616161" font-size="11" font-family="Arial">Valid on mobile</text>
+    <text x="1225" y="659" fill="#2196f3" font-size="10" font-family="Arial" font-weight="bold">Legally Valid</text>
+  </g>

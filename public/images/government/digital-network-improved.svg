@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a237e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004ba0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00bcd4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4dd0e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#80deea;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#81c784;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="6" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="url(#darkGrad)"/>
+  
+  <!-- Tricolour Flag Bar -->
+  <rect x="0" y="0" width="1400" height="18" fill="#ff9a00"/>
+  <rect x="0" y="18" width="1400" height="18" fill="#ffffff"/>
+  <rect x="0" y="36" width="1400" height="18" fill="#138808"/>
+
+  <!-- Subtle Grid Pattern Background -->
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#00bcd4" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="800" fill="url(#grid)"/>
+
+  <!-- Network Connections Lines -->
+  <g fill="none" stroke="url(#pulseGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.6">
+    <path d="M 280 600 Q 450 400 620 500"/>
+    <path d="M 280 600 L 400 750"/>
+    <path d="M 620 500 L 900 650"/>
+    <path d="M 620 500 Q 800 300 1000 400"/>
+    <path d="M 900 650 L 1100 720"/>
+    <path d="M 1000 400 L 1120 300"/>
+    <path d="M 400 750 L 900 650"/>
+  </g>
+
+  <!-- Network Nodes with Glow -->
+  <g filter="url(#glow)" filter="url(#shadow)">
+    <!-- Central Hub - Ministry Server -->
+    <circle cx="700" cy="400" r="32" fill="url(#pulseGrad)" stroke="#00bcd4" stroke-width="3"/>
+    <circle cx="700" cy="400" r="24" fill="#0f1419" opacity="0.7"/>
+    <text x="700" y="415" text-anchor="middle" fill="#00bcd4" font-size="20" font-weight="bold">🛰️</text>
+    
+    <!-- Node 1 - North West -->
+    <circle cx="350" cy="280" r="24" fill="#00bcd4" stroke="#4dd0e1" stroke-width="2"/>
+    <circle cx="350" cy="280" r="16" fill="#0f1419" opacity="0.6"/>
+    <text x="350" y="290" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">•</text>
+    
+    <!-- Node 2 - South West -->
+    <circle cx="280" cy="600" r="24" fill="#00bcd4" stroke="#4dd0e1" stroke-width="2"/>
+    <circle cx="280" cy="600" r="16" fill="#0f1419" opacity="0.6"/>
+    <text x="280" y="610" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">•</text>
+    
+    <!-- Node 3 - South East -->
+    <circle cx="900" cy="650" r="24" fill="#00bcd4" stroke="#4dd0e1" stroke-width="2"/>
+    <circle cx="900" cy="650" r="16" fill="#0f1419" opacity="0.6"/>
+    <text x="900" y="660" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">•</text>
+    
+    <!-- Node 4 - North East -->
+    <circle cx="1120" cy="300" r="24" fill="#00bcd4" stroke="#4dd0e1" stroke-width="2"/>
+    <circle cx="1120" cy="300" r="16" fill="#0f1419" opacity="0.6"/>
+    <text x="1120" y="310" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">•</text>
+    
+    <!-- Node 5 - East -->
+    <circle cx="1100" cy="720" r="24" fill="#00bcd4" stroke="#4dd0e1" stroke-width="2"/>
+    <circle cx="1100" cy="720" r="16" fill="#0f1419" opacity="0.6"/>
+    <text x="1100" y="730" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">•</text>
+  </g>
+
+  <!-- Service Labels with Backdrop -->
+  <g>
+    <!-- Ministry HQ -->
+    <rect x="260" y="190" width="180" height="75" rx="8" fill="#0f1419" stroke="#00bcd4" stroke-width="2" opacity="0.9"/>
+    <text x="350" y="220" text-anchor="middle" fill="#4dd0e1" font-size="14" font-family="Arial, sans-serif" font-weight="bold">MoRTH - Ministry HQ</text>
+    <text x="350" y="242" text-anchor="middle" fill="#80deea" font-size="11" font-family="Arial">New Delhi</text>
+    <text x="350" y="257" text-anchor="middle" fill="#00bcd4" font-size="9" font-family="Arial">Policy & Standards</text>
+    
+    <!-- State RTO -->
+    <rect x="180" y="630" width="180" height="75" rx="8" fill="#0f1419" stroke="#00bcd4" stroke-width="2" opacity="0.9"/>
+    <text x="270" y="660" text-anchor="middle" fill="#4dd0e1" font-size="14" font-family="Arial, sans-serif" font-weight="bold">State RTO Centers</text>
+    <text x="270" y="682" text-anchor="middle" fill="#80deea" font-size="11" font-family="Arial">Regional Network</text>
+    <text x="270" y="697" text-anchor="middle" fill="#00bcd4" font-size="9" font-family="Arial">Local Processing</text>
+    
+    <!-- Cloud Data Center -->
+    <rect x="830" y="680" width="180" height="75" rx="8" fill="#0f1419" stroke="#00bcd4" stroke-width="2" opacity="0.9"/>
+    <text x="920" y="710" text-anchor="middle" fill="#4dd0e1" font-size="14" font-family="Arial, sans-serif" font-weight="bold">Cloud Database</text>
+    <text x="920" y="732" text-anchor="middle" fill="#80deea" font-size="11" font-family="Arial">Secure Servers</text>
+    <text x="920" y="747" text-anchor="middle" fill="#00bcd4" font-size="9" font-family="Arial">24/7 Uptime</text>
+    
+    <!-- Citizen Portal -->
+    <rect x="1020" y="190" width="180" height="75" rx="8" fill="#0f1419" stroke="#00bcd4" stroke-width="2" opacity="0.9"/>
+    <text x="1110" y="220" text-anchor="middle" fill="#4dd0e1" font-size="14" font-family="Arial, sans-serif" font-weight="bold">Citizen Access Portal</text>
+    <text x="1110" y="242" text-anchor="middle" fill="#80deea" font-size="11" font-family="Arial">sarathi.gov.in</text>
+    <text x="1110" y="257" text-anchor="middle" fill="#00bcd4" font-size="9" font-family="Arial">Online Services</text>
+  </g>
+
+  <!-- Main Title Section -->
+  <rect x="60" y="60" width="420" height="110" rx="10" fill="#0f1419" stroke="#4dd0e1" stroke-width="2" opacity="0.95"/>
+  <text x="270" y="100" text-anchor="middle" fill="#4dd0e1" font-size="22" font-family="Arial, sans-serif" font-weight="bold">Digital Transport Network</text>
+  <text x="270" y="125" text-anchor="middle" fill="#80deea" font-size="12" font-family="Arial">Integrated connectivity across all transport services</text>
+  <text x="270" y="145" text-anchor="middle" fill="#00bcd4" font-size="10" font-family="Arial">🔒 Secure • ⚡ Fast • 🌍 Accessible</text>
+
+  <!-- Active Data Flow Indicators -->
+  <g>
+    <!-- Blue flow pulse (Outbound) -->
+    <circle cx="450" cy="380" r="5" fill="#4dd0e1" opacity="0.9"/>
+    <circle cx="500" cy="360" r="5" fill="#4dd0e1" opacity="0.8"/>
+    <circle cx="550" cy="375" r="5" fill="#4dd0e1" opacity="0.7"/>
+    
+    <!-- Green flow pulse (Processing) -->
+    <circle cx="800" cy="520" r="5" fill="#4caf50" opacity="0.9"/>
+    <circle cx="850" cy="540" r="5" fill="#4caf50" opacity="0.8"/>
+    <circle cx="800" cy="560" r="5" fill="#4caf50" opacity="0.7"/>
+    
+    <!-- Cyan pulse at hub -->
+    <circle cx="700" cy="450" r="4" fill="#00bcd4" opacity="0.95"/>
+  </g>
+
+  <!-- Connection Status Indicators -->
+  <g>
+    <circle cx="35" cy="70" r="8" fill="#4caf50" stroke="#81c784" stroke-width="2" filter="url(#glow)"/>
+    <text x="52" y="76" fill="#ffffff" font-size="11" font-family="Arial" font-weight="bold">All Systems Online</text>
+  </g>
